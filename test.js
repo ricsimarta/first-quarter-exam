@@ -1,13 +1,13 @@
 /*
 
 
-********************************
-********************************
-**                            **
-**  DO NOT CHANGE THIS FILE!  **
-**                            **
-********************************
-********************************
+**************************************
+**************************************
+**                                  **
+**     DO NOT CHANGE THIS FILE!     **
+**                                  **
+**************************************
+**************************************
 
 
 */
@@ -15,6 +15,7 @@
 const sumOfTwoNumbers = require('./sumOfTwoNumbers')
 const repeatMyself = require('./repeatMyself')
 const numberChecking = require('./numberChecking')
+const findAGoodCar = require('./findAGoodCar')
 
 const it = (desc, fn) => {
     try {
@@ -69,4 +70,150 @@ it('should return the number rounded down when 0 < number < 10 and the number is
 })
 it ('should return the number when 0 < number < 10 and the number is an integer', () => {
     assert(numberChecking(5) === 5)
+})
+
+const carsArray = [
+    {
+        manufacturer: "Opel",
+        yearOfManufacturing: 2008,
+        km: 184000,
+        price: 2000000
+    },
+    {
+        manufacturer: "Opel",
+        yearOfManufacturing: 2011,
+        km: 212000,
+        price: 4500000
+    },
+    {
+        manufacturer: "Opel",
+        yearOfManufacturing: 2004,
+        km: 240000,
+        price: 1700000
+    },
+    {
+        manufacturer: "BMW",
+        yearOfManufacturing: 2002,
+        km: 280000,
+        price: 2400000
+    },
+    {
+        manufacturer: "BMW",
+        yearOfManufacturing: 2014,
+        km: 80000,
+        price: 11000000
+    },
+    {
+        manufacturer: "BMW",
+        yearOfManufacturing: 2010,
+        km: 140000,
+        price: 8000000
+    },
+    {
+        manufacturer: "Tesla",
+        yearOfManufacturing: 2021,
+        km: 110000,
+        price: 27000000
+    },
+    {
+        manufacturer: "Tesla",
+        yearOfManufacturing: 2019,
+        km: 40000,
+        price: 31000000
+    },
+    {
+        manufacturer: "Audi",
+        yearOfManufacturing: 2001,
+        km: 280000,
+        price: 1200000
+    },
+    {
+        manufacturer: "Audi",
+        yearOfManufacturing: 2004,
+        km: 289000,
+        price: 1500000
+    },
+    {
+        manufacturer: "Audi",
+        yearOfManufacturing: 2007,
+        km: 190000,
+        price: 1750000
+    },
+    {
+        manufacturer: "Audi",
+        yearOfManufacturing: 2011,
+        km: 212000,
+        price: 3200000
+    }
+]
+
+console.log('\nfindAGoodCar:')
+it('should return null if no good car could be found', () => {
+    assert(findAGoodCar(carsArray, { }) === null)
+})
+it('should return all BMW cars if all is matching the requirements', () => {
+    assert(findAGoodCar(carsArray, {
+        manufacturer: "BMW",
+        yearOfManufacturing: 2000,
+        price: 50000000,
+        km: 500000
+    }).length === 3)
+})
+it('should filter correctly by year of manufacturing', () => {
+    assert(findAGoodCar(carsArray, {
+        manufacturer: "Audi",
+        yearOfManufacturing: 2005,
+        price: 50000000,
+        km: 500000
+    }).length === 2)
+    assert(findAGoodCar(carsArray, {
+        manufacturer: "Audi",
+        yearOfManufacturing: 2004,
+        price: 50000000,
+        km: 500000
+    }).length === 3)
+})
+it('should filter correctly by price', () => {
+    assert(findAGoodCar(carsArray, {
+        manufacturer: "Tesla",
+        yearOfManufacturing: 2015,
+        price: 30000000,
+        km: 5000000
+    }).length === 1)
+    assert(findAGoodCar(carsArray, {
+        manufacturer: "Tesla",
+        yearOfManufacturing: 2015,
+        price: 31000000,
+        km: 5000000
+    }).length === 2)
+})
+it('should filter correctly by kilometers', () => {
+    assert(findAGoodCar(carsArray, {
+        manufacturer: "Opel",
+        yearOfManufacturing: 2000,
+        price: 30000000,
+        km: 212000
+    }).length === 1)
+    assert(findAGoodCar(carsArray, {
+        manufacturer: "Opel",
+        yearOfManufacturing: 2000,
+        price: 30000000,
+        km: 212001
+    }).length === 2)
+})
+it('should return one car if only one is matching the requirements', () => {
+    assert(findAGoodCar(carsArray, {
+        manufacturer: "Audi",
+        yearOfManufacturing: 2004,
+        price: 1800000,
+        km: 200000
+    }).length === 1)
+})
+it('should return two cars if two cars if matching the requirements', () => {
+    assert(findAGoodCar(carsArray, {
+        manufacturer: "Audi",
+        yearOfManufacturing: 2001,
+        price: 1500000,
+        km: 300000
+    }).length === 2)
 })

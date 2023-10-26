@@ -51,27 +51,84 @@ The `cars` parameter is an array of car objects.
 The `expectations` parameter is an object.
 
 The function should check the `cars` array, if it has any objects, that are meeting the expectations of the `expectations` object.  
-We can say, that a car is a good car, if the car:  
-- has the same `manufacturer` as the expectations  
+We can say, that a car is meeting the expectations, and is a good car, if the car:  
+- has the same `manufacturer` as the expectations object 
 - has been made in the same year, or later, as the `yearOfManufacturing` from the expectations object  
 - has lesser km's of running, than the `km` from the expectations object  
-- is the same price, or cheaper, than the `price` from the expectations object  
+- is the same price, or cheaper, than the `price` from the expectations object 
+
+If the function finds no good cars, it should return `null` instead of an empty array.  
 
 example of the cars array:  
 ```
-    [
-        {
-            manufacturer: "Opel",
-            yearOfManufacturing: 2008,
-            km: 184000,
-            price: 2000000
-        },
-        {
-            manufacturer: "Opel",
-            yearOfManufacturing: 2011,
-            km: 212000,
-            price: 4500000
-        },
-        ...
-    ]
+[
+    {
+        manufacturer: "Opel",
+        yearOfManufacturing: 2008,
+        km: 184000,
+        price: 2000000
+    },
+    {
+        manufacturer: "Opel",
+        yearOfManufacturing: 2011,
+        km: 212000,
+        price: 4500000
+    },
+    {
+        manufacturer: "Opel",
+        yearOfManufacturing: 2004,
+        km: 240000,
+        price: 1700000
+    }
+]
 ```
+
+example of the expectations object:
+```
+{
+    manufacturer: "Opel",
+    yearOfManufacturing: 2000,
+    price: 30000000,
+    km: 212000
+}
+```
+
+
+running example:
+```
+findAGoodCar(carsArray, {
+    manufacturer: "Audi",
+    yearOfManufacturing: 2004,
+    price: 1800000,
+    km: 325000
+})
+```
+
+should return with an array of 2 objects:
+```
+[
+  {
+    manufacturer: 'Audi',
+    yearOfManufacturing: 2004,
+    km: 289000,
+    price: 1500000
+  },
+  {
+    manufacturer: 'Audi',
+    yearOfManufacturing: 2007,
+    km: 190000,
+    price: 1750000
+  }
+]
+```
+
+example of no good cars:
+```
+findAGoodCar(carsArray, {
+    manufacturer: "Audi",
+    yearOfManufacturing: 2004,
+    price: 18000,
+    km: 32500
+})
+```
+should return `null`

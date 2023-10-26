@@ -58,6 +58,7 @@ We can say, that a car is a good car, if the car:
 - is the same price, or cheaper, than the `price` from the expectations object  
 
 example of the cars array:  
+```
     [
         {
             manufacturer: "Opel",
@@ -73,3 +74,4 @@ example of the cars array:
         },
         ...
     ]
+```

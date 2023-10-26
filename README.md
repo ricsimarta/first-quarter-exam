@@ -41,6 +41,6 @@ If the value of the parameter is not a whole number, you should return that numb
 
 examples:
 
-numberChecking(15) should return "sok"
-numberChecking(4.5) should return 4
+numberChecking(15) should return "sok"  
+numberChecking(4.5) should return 4  
 numberChecking(-111) should return 0

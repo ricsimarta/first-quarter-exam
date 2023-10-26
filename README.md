@@ -101,6 +101,7 @@ example of the expectations object:
 }
 ```
 
+---
 
 running example:
 ```

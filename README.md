@@ -19,6 +19,7 @@ The function always gets 2 numbers for arguments, no need to check those.
 
 examples:
 sumOfTwoNumbers(1, 2) should return 3
+
 sumOfTwoNumbers(-2, -4) should return -6
 
 # repeatMyself
@@ -28,7 +29,9 @@ It should work with empty strings, too.
 
 examples:
 repeatMyself("hello") should return "hello!hello!!hello!!!hello!!!!hello!!!!!"
+
 repeatMyself("hi!") should return "hi!!hi!!!hi!!!!hi!!!!!hi!!!!!!"
+
 repeatMyself("") should return "!!!!!!!!!!!!!!!"
 
 # numberChecking
@@ -39,5 +42,7 @@ If the value of the parameter is not a whole number, you should return that numb
 
 examples:
 numberChecking(15) should return "sok"
+
 numberChecking(4.5) should return 4
+
 numberChecking(-111) should return 0

@@ -18,6 +18,7 @@ The function should return the sum of the 2 parameters.
 The function always gets 2 numbers for arguments, no need to check those.
 
 examples:
+
 sumOfTwoNumbers(1, 2) should return 3
 
 sumOfTwoNumbers(-2, -4) should return -6
@@ -28,6 +29,7 @@ You should return the string 5 times, concatenated, with increasing amount of ex
 It should work with empty strings, too.
 
 examples:
+
 repeatMyself("hello") should return "hello!hello!!hello!!!hello!!!!hello!!!!!"
 
 repeatMyself("hi!") should return "hi!!hi!!!hi!!!!hi!!!!!hi!!!!!!"
@@ -41,6 +43,7 @@ If the value of the parameter is a negative number, you should return 0.
 If the value of the parameter is not a whole number, you should return that number rounded down.
 
 examples:
+
 numberChecking(15) should return "sok"
 
 numberChecking(4.5) should return 4

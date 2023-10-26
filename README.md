@@ -1,6 +1,6 @@
 # Description
 You have to complete 4 functions, in 4 different files:  
--sumOfTwoNumbers -> sumOfTwoNumbers.js  
+-sumOfTwoNumbers -> `sumOfTwoNumbers.js`\
 -repeatMyself -> repeatMyself.js  
 -numberChecking -> numberChecking.js  
 

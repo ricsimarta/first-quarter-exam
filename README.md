@@ -44,3 +44,32 @@ examples:
 `numberChecking(15)` should return `"sok"`  
 `numberChecking(4.5)` should return `4`  
 `numberChecking(-111)` should return `0`
+
+# findAGoodCar
+Write a function that has 2 parameters: `cars` and `expectations`.  
+The `cars` parameter is an array of car objects.  
+The `expectations` parameter is an object.
+
+The function should check the `cars` array, if it has any objects, that are meeting the expectations of the `expectations` object.  
+We can say, that a car is a good car, if the car:  
+- has the same `manufacturer` as the expectations  
+- has been made in the same year, or later, as the `yearOfManufacturing` from the expectations object  
+- has lesser km's of running, than the `km` from the expectations object  
+- is the same price, or cheaper, than the `price` from the expectations object  
+
+example of the cars array:  
+    [
+        {
+            manufacturer: "Opel",
+            yearOfManufacturing: 2008,
+            km: 184000,
+            price: 2000000
+        },
+        {
+            manufacturer: "Opel",
+            yearOfManufacturing: 2011,
+            km: 212000,
+            price: 4500000
+        },
+        ...
+    ]

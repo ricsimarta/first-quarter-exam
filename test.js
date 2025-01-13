@@ -209,7 +209,7 @@ it('should return one car if only one is matching the requirements', () => {
         km: 200000
     }).length === 1)
 })
-it('should return two cars if two cars if matching the requirements', () => {
+it('should return two cars if two cars is matching the requirements', () => {
     assert(findAGoodCar(carsArray, {
         manufacturer: "Audi",
         yearOfManufacturing: 2001,
